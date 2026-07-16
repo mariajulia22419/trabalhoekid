@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPlay - Plataforma de Jogos Educativos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">EduPlay 🎮</div>
+        <div class="controls">
+            <button class="btn-access" onclick="changeFontSize(1)" title="Aumentar Letra">A+</button>
+            <button class="btn-access" onclick="changeFontSize(-1)" title="Diminuir Letra">A-</button>
+            <button class="btn-access" onclick="toggleTheme()" id="theme-btn">🌙 Modo Escuro</button>
+            
+            <button class="btn-nav btn-special" onclick="openSpecialArea()">✨ Área Especial</button>
+            <button class="btn-nav btn-parents" onclick="openParentsArea()">🔒 Área dos Pais</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section>
+            <h2 class="section-title">🏫 Ensino Fundamental (1º ao 9º Ano)</h2>
+            <div class="grid-subjects" id="fundamental-grid"></div>
+        </section>
+
+        <section>
+            <h2 class="section-title">🎓 Ensino Médio (1º ao 3º Ano)</h2>
+            <div class="grid-subjects" id="medio-grid"></div>
+        </section>
+    </main>
+
+    <div class="modal" id="game-modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('game-modal')">&times;</button>
+            <div class="quiz-container" id="quiz-box">
+                </div>
+        </div>
+    </div>
+
+    <div class="modal" id="parents-modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('parents-modal')">&times;</button>
+            <h2>🔒 Área de Controle dos Pais & Responsáveis</h2>
+            <p>Monitore o progresso do seu filho, tenha acesso a relatórios e libere todas as atividades assinando um de nossos planos:</p>
+            
+            <div class="pay-options-container">
+                <div class="pay-option" onclick="selectPlan('Mensal', 'R$ 59,99')">
+                    <h3>Plano Mensal</h3>
+                    <div class="price">R$ 59,99 <span class="period">/ mês</span></div>
+                    <p>Acesso ilimitado a todos os jogos e matérias do Fundamental e Médio.</p>
+                </div>
+                
+                <div class="pay-option popular" onclick="selectPlan('Anual', 'R$ 259,99')">
+                    <span class="badge">Melhor Valor</span>
+                    <h3>Plano Anual</h3>
+                    <div class="price">R$ 259,99 <span class="period">/ ano</span></div>
+                    <p>Economize mais de 60% em relação ao plano mensal. Acesso garantido por 12 meses.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="special-modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal('special-modal')">&times;</button>
+            <h2>✨ Área de Aprendizado Adaptado</h2>
+            <p class="special-desc">Jogos inclusivos projetados com fontes amigáveis para dislexia, alto contraste, sem limites de tempo estressantes e comandos simplificados.</p>
+            <div id="special-games-list" class="special-list">
+                </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
